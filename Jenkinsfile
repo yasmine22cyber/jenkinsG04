@@ -2,7 +2,7 @@ pipeline {
 agent any
 options { timestamps() }
 environment {
-IMAGE = 'zayneeb/monapp'
+IMAGE = 'yasminekriaa21/monapp'
 TAG = "build-${env.BUILD_NUMBER}"}
 stages {
 stage('Checkout') {

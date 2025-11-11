@@ -3,7 +3,8 @@ agent any
 options { timestamps() }
 environment {
 IMAGE = 'yasminekriaa21/monapp'
-TAG = "build-${env.BUILD_NUMBER}"}
+TAG = "build-${env.BUILD_NUMBER}"
+}
 stages {
 stage('Checkout') {
 steps { checkout scm } // lit le même repo que le job
@@ -12,7 +13,7 @@ stage('Docker Build') {
 steps {
 bat 'docker version'
 bat "docker build -t %IMAGE%:%TAG% ."
-}
+  }
 }
 stage('Smoke Test') {
 steps {
